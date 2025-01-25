@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Slider from '@/components/shared/slider';
 import { products } from '@/constants';
 import { Product } from '@/types';
+import { useRouter } from 'next/navigation';
 
 const MainPage: React.FC = () => {
      const [currentPage, setCurrentPage] = useState<number>(0);
      const productsPerPage: number = 8;
      const totalPages: number = Math.ceil(products.length / productsPerPage);
+     const router = useRouter()
 
      const getProductsForPage = (page: number): Product[] =>
           products.slice(page * productsPerPage, (page + 1) * productsPerPage);
@@ -17,6 +19,12 @@ const MainPage: React.FC = () => {
                setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
           }, 10000);
 
+          const getProducts = async () => {
+               // API CALL
+          }
+
+
+          getProducts()
           return () => clearInterval(interval);
      }, [totalPages]);
 
@@ -49,6 +57,9 @@ const MainPage: React.FC = () => {
                                                             'https://img.freepik.com/free-photo/vestrahorn-mountains-stokksnes-iceland_335224-667.jpg'
                                                        }
                                                        alt={product.name}
+                                                       onClick={() => {
+                                                            router.push(`/products/${product.id}`)
+                                                       }}
                                                        className="w-full h-40 object-cover rounded-lg mb-4"
                                                   />
                                                   <p className="font-semibold">{product.name}</p>

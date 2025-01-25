@@ -7,7 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
      return (
           <div className="bg-[rgb(137,62,249)] text-white py-10 px-6">
-               <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+               <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
                          <div className="flex items-center space-x-3">
                               <div className="w-12 h-12 flex items-center justify-center rounded-lg">
@@ -54,6 +54,14 @@ const Footer = () => {
                               <li>Guarantee</li>
                               <li>Frequently asked questions</li>
                               <li>Terms of use of the site</li>
+                         </ul>
+                    </div>
+                    <div>
+                         <h3 className="text-lg font-bold mb-4">Contacts</h3>
+                         <ul className="space-y-2">
+                              <li>+998 91 600 83 00</li>
+                              <li>+998 91 600 83 00</li>
+                              <li>+998 91 600 83 00</li>
                          </ul>
                     </div>
                </div>

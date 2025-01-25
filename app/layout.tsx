@@ -4,8 +4,7 @@ import "./globals.css";
 import { ChildProps } from "@/types";
 import Navbar from "@/components/shared/navbar";
 import Categories from "@/components/shared/categories";
-import Footer from "@/components/shared/footer";
-import modeStore from "@/store/mode-store";
+import Footer from "@/components/shared/footer";;
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -35,13 +34,13 @@ export const metadata: Metadata = {
   },
   keywords: [""]
 };
-
 export default function RootLayout({ children }: ChildProps) {
   return (
     <html lang="en">
       <body
-        className={`${monospace.variable} ${roboto.variable} ${modeStore.status === 'dark' ? 'dark' : null} antialiased`}
-      > <header>
+        className={`${monospace.variable} ${roboto.variable} antialiased`}
+      >
+        <header>
           <Navbar />
           <nav className='bg-[#2E2E2E]'>
             <Categories />

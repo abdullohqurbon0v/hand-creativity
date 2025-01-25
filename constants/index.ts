@@ -1,3 +1,9 @@
+import image1 from "@/images/1.jpg"
+import image2 from "@/images/2.jpg"
+import image3 from "@/images/3.jpg"
+import image4 from "@/images/4.jpg"
+
+
 export const products = [
      { id: 1, name: "Product 1", price: "$900", image: "https://via.placeholder.com/150" },
      { id: 2, name: "Product 2", price: "$2535", image: "https://via.placeholder.com/150" },
@@ -30,3 +36,23 @@ export const products = [
      { id: 29, name: "Product 29", price: "$450", image: "https://via.placeholder.com/150" },
      { id: 30, name: "Product 30", price: "$560", image: "https://via.placeholder.com/150" },
 ];
+
+
+export const joinusimagesslide = [
+     {
+          id: 1,
+          image: image1,
+     },
+     {
+          id: 2,
+          image: image2,
+     },
+     {
+          id: 3,
+          image: image3,
+     },
+     {
+          id: 4,
+          image: image4
+     },
+]

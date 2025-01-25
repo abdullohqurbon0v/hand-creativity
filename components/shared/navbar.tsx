@@ -1,13 +1,31 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { FaRegHeart, FaRegUser } from 'react-icons/fa'
 import { FiShoppingCart } from 'react-icons/fi'
 import ModeToggle from './mode-toggle'
+import { useRouter } from 'next/navigation'
+import SaylerModal from '../modal/sayler-modal'
 
 const Navbar = () => {
-     const [query, setQuery] = useState('')
+     const [isOpen, setIsOpen] = useState<boolean>(false)
+     const [query, setQuery] = useState<string>('')
+     const router = useRouter()
+
+     const handleSearch = (e: FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+          router.push(`/search?query=${query}`);
+     }
+
+     const onClose = () => {
+          setIsOpen(false)
+     }
+
+     const openModal = () => {
+          setIsOpen(true)
+     }
+
      return (
           <div className="bg-[rgb(137,62,249)]">
                <div className="max-w-[1200px] mx-auto flex items-center justify-between py-1">
@@ -15,7 +33,7 @@ const Navbar = () => {
                          <Link href="/">
                               <img src="./logo.png" alt="Logo" className='cursor-pointer' />
                          </Link>
-                         <form className="flex items-center py-3 px-2  space-x-2 bg-white rounded-lg w-full">
+                         <form className="flex items-center py-3 px-2  space-x-2 bg-white rounded-lg w-full" onSubmit={handleSearch}>
                               <button type="submit">
                                    <CiSearch size={20} />
                               </button>
@@ -33,6 +51,7 @@ const Navbar = () => {
                     <div className="flex items-center space-x-5">
                          <button
                               className="bg-white text-[rgb(137,62,249)] px-10 py-2 rounded-lg font-semibold"
+                              onClick={openModal}
                          >
                               For sellers
                          </button>
@@ -50,8 +69,9 @@ const Navbar = () => {
                          </div>
                     </div>
                </div>
+               <SaylerModal isOpen={isOpen} onClose={onClose} />
           </div>
      )
 }
 
-export default Navbar
+export default Navbar;

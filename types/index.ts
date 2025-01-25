@@ -12,3 +12,8 @@ export interface Product {
      name: string;
      price: string;
 }
+
+export interface ModalType {
+     isOpen: boolean,
+     onClose: () => void
+}
