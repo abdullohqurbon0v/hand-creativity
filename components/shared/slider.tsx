@@ -31,7 +31,7 @@ const Slider = () => {
                setCurrentIndex((prevIndex) =>
                     prevIndex === sliders.length - 1 ? 0 : prevIndex + 1
                );
-          }, 5000);
+          }, 50000);
 
           return () => clearInterval(interval);
      }, []);
@@ -45,15 +45,15 @@ const Slider = () => {
                <div className="relative w-full overflow-hidden  dark:bg-black">
                     <h1 className="text-xl font-semibold">Some text</h1>
                     <div
-                         className="flex space-x-5 mt-3 transition-transform duration-1000 ease-in-out"
+                         className="flex w-[100%] space-x-5 mt-3 transition-transform duration-1000 ease-in-out"
                          style={{
-                              transform: `translateX(-${currentIndex * 101.7}%)`,
+                              transform: `translateX(-${currentIndex * 104.8}%)`,
                          }}
                     >
                          {sliders.map((item) => (
                               <div
                                    key={item.id}
-                                   className="min-w-full h-[400px] flex-shrink-0"
+                                   className="max-w-[100%] lg:min-w-full h-[400px] flex-shrink-0"
                               >
                                    <img
                                         src={item.image}

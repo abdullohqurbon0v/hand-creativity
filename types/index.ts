@@ -3,7 +3,7 @@ export interface ChildProps {
 }
 export interface IUser {
      id: number;
-     name: string;
+     username: string;
      email: string;
 }
 
@@ -16,4 +16,11 @@ export interface Product {
 export interface ModalType {
      isOpen: boolean,
      onClose: () => void
+}
+
+
+export interface AuthType {
+     username: string,
+     email: string,
+     password: string
 }

@@ -7,6 +7,7 @@ import { FiShoppingCart } from 'react-icons/fi'
 import ModeToggle from './mode-toggle'
 import { useRouter } from 'next/navigation'
 import SaylerModal from '../modal/sayler-modal'
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
      const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -28,7 +29,7 @@ const Navbar = () => {
 
      return (
           <div className="bg-[rgb(137,62,249)]">
-               <div className="max-w-[1200px] mx-auto flex items-center justify-between py-1">
+               <div className="max-w-[1200px] mx-auto flex items-center justify-between px-5 xl:px-0 py-1">
                     <div className="flex items-center space-x-12 w-1/2">
                          <Link href="/">
                               <img src="./logo.png" alt="Logo" className='cursor-pointer' />
@@ -55,7 +56,7 @@ const Navbar = () => {
                          >
                               For sellers
                          </button>
-                         <div className="flex items-center space-x-5">
+                         <div className="hidden xl:flex items-center space-x-5">
                               <ModeToggle />
                               <Link href="likes" className="text-white cursor-pointer">
                                    <FaRegHeart size={22} />
@@ -63,9 +64,12 @@ const Navbar = () => {
                               <Link href="cart" className="text-white cursor-pointer">
                                    <FiShoppingCart size={22} />
                               </Link>
-                              <p className="text-white cursor-pointer" >
+                              <Link href="/signin" className="text-white cursor-pointer" >
                                    <FaRegUser size={22} />
-                              </p>
+                              </Link>
+                         </div>
+                         <div className='block xl:hidden'>
+                              <GiHamburgerMenu size={25} className='text-white cursor-pointer' />
                          </div>
                     </div>
                </div>

@@ -13,7 +13,6 @@ const MainPage: React.FC = () => {
 
      const getProductsForPage = (page: number): Product[] =>
           products.slice(page * productsPerPage, (page + 1) * productsPerPage);
-
      useEffect(() => {
           const interval = setInterval(() => {
                setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
@@ -44,7 +43,7 @@ const MainPage: React.FC = () => {
                               {Array.from({ length: totalPages }).map((_, pageIndex) => (
                                    <div
                                         key={pageIndex}
-                                        className="grid grid-cols-4 gap-6 w-full"
+                                        className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full"
                                         style={{ flex: '0 0 100%' }}
                                    >
                                         {getProductsForPage(pageIndex).map((product) => (
