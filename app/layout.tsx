@@ -43,7 +43,7 @@ export default function RootLayout({ children }: ChildProps) {
         <header>
           <Navbar />
           <nav className='bg-[#2E2E2E]'>
-            <Categories />
+            {/* <Categories /> */}
           </nav>
         </header>
         <main>

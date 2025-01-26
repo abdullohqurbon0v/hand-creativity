@@ -13,7 +13,6 @@ const Footer = () => {
                               <div className="w-12 h-12 flex items-center justify-center rounded-lg">
                                    <img src="logo.png" alt="Logo" />
                               </div>
-                              <h2 className="text-xl font-bold">Hand Creativity</h2>
                          </div>
                          <p className="mt-4 text-sm">
                               We are a residential interior design firm located in Portland. Our

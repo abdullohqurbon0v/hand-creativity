@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 export interface ChildProps {
      children: React.ReactNode
 }
@@ -7,11 +8,30 @@ export interface IUser {
      email: string;
 }
 
-export interface Product {
+
+export type Product = {
      id: number;
      name: string;
-     price: string;
-}
+     price: number;
+     image: StaticImageData | string;
+     user: string;
+     title: string;
+     body: string;
+     rate: number;
+     stock: number;
+     size: string;
+     dimensions: string;
+     warranty: string;
+     materials: string;
+     category: string;
+     images: string[];
+     _id: string;
+     createdAt: string;
+     updatedAt: string;
+     __v: number;
+};
+
+
 
 export interface ModalType {
      isOpen: boolean,

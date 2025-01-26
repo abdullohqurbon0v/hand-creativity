@@ -1,27 +1,9 @@
 'use client'
 
+import { sliders } from "@/constants";
 import React, { useState, useEffect } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
-
-export const sliders = [
-     {
-          image: "https://img.freepik.com/free-photo/vestrahorn-mountains-stokksnes-iceland_335224-667.jpg",
-          id: 1,
-     },
-     {
-          image: "https://sotni.ru/wp-content/uploads/2023/08/gory-8.webp",
-          id: 2,
-     },
-     {
-          image: "https://kartin.papik.pro/uploads/posts/2023-06/1686773364_kartin-papik-pro-p-kartinki-priroda-na-telefon-v-khoroshem-ka-19.jpg",
-          id: 3,
-     },
-     {
-          image: "https://sotni.ru/wp-content/uploads/2023/08/paradiz-ostrov-karibskogo-moria-21.webp",
-          id: 4,
-     },
-];
 
 const Slider = () => {
      const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,7 +13,7 @@ const Slider = () => {
                setCurrentIndex((prevIndex) =>
                     prevIndex === sliders.length - 1 ? 0 : prevIndex + 1
                );
-          }, 50000);
+          }, 3000);
 
           return () => clearInterval(interval);
      }, []);
@@ -40,14 +22,16 @@ const Slider = () => {
           setCurrentIndex(idx)
      }
 
+     console.log(sliders)
+
      return (
           <>
                <div className="relative w-full overflow-hidden  dark:bg-black">
                     <h1 className="text-xl font-semibold">Some text</h1>
                     <div
-                         className="flex w-[100%] space-x-5 mt-3 transition-transform duration-1000 ease-in-out"
+                         className="flex w-[100%] space-x-5 mt-3 transition-transform translate-x-[] duration-1000 ease-in-out"
                          style={{
-                              transform: `translateX(-${currentIndex * 104.8}%)`,
+                              transform: `translateX(-${currentIndex * 101.7}%)`,
                          }}
                     >
                          {sliders.map((item) => (
@@ -56,7 +40,7 @@ const Slider = () => {
                                    className="max-w-[100%] lg:min-w-full h-[400px] flex-shrink-0"
                               >
                                    <img
-                                        src={item.image}
+                                        src={item.image.src}
                                         alt="Slider image"
                                         className="w-full h-full object-cover rounded-3xl"
                                    />
